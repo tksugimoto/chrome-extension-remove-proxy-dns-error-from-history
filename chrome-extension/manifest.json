@@ -1,0 +1,28 @@
+{
+	"name": "ProxyがDNSエラーでもHTTPレスポンスする場合に履歴に残さない",
+	"version": "0.1.0",
+	"manifest_version": 2,
+
+	"description": "",
+
+	"permissions": [
+		"notifications",
+		"history"
+	],
+
+	"background": {
+		"persistent": false,
+		"scripts": [
+			"background.js"
+		]
+	},
+	"content_scripts": [{
+		"all_frames": true,
+		"matches": [
+			"<all_urls>"
+		],
+		"js": [
+			"content_script.js"
+		]
+	}]
+}
